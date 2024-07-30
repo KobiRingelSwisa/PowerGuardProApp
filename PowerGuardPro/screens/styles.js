@@ -85,6 +85,61 @@ const styles = StyleSheet.create({
   reportText: {
     fontSize: 18,
   },
+
+  // DeviceControlScreen specific styles
+  deviceList: {
+    marginTop: 20,
+  },
+  deviceItem: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    padding: 10,
+    borderBottomWidth: 1,
+    borderBottomColor: '#ccc',
+  },
+  deviceImage: {
+    width: 50,
+    height: 50,
+    marginRight: 10,
+  },
+  deviceInfo: {
+    flex: 1,
+  },
+  deviceName: {
+    fontSize: 18,
+    fontWeight: 'bold',
+  },
+  deviceStatus: {
+    fontSize: 14,
+    color: 'gray',
+  },
+
+  // Modal styles
+  modalContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+  },
+  modalContent: {
+    width: '80%',
+    backgroundColor: 'white',
+    padding: 20,
+    borderRadius: 10,
+  },
+  modalTitle: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginBottom: 20,
+  },
+  modalText: {
+    fontSize: 16,
+    marginBottom: 10,
+  },
+  modalButton: {
+    marginTop: 20,
+  },
+
 });
 
 export default styles;
