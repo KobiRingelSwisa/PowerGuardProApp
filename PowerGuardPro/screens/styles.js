@@ -1,43 +1,90 @@
+// styles.js
 import { StyleSheet } from 'react-native';
 
-export const colors = {
-  primary: '#ff6347', // Tomato (a reddish orange)
-  secondary: '#ff4500', // OrangeRed
-  white: '#ffffff',
-  background: '#f5f5f5',
-  textPrimary: '#333333',
-};
-
-export const globalStyles = StyleSheet.create({
+const styles = StyleSheet.create({
+  // General styles
   container: {
     flex: 1,
     justifyContent: 'center',
     paddingHorizontal: 20,
-    backgroundColor: colors.background,
+    backgroundColor: 'white',
+  },
+  logo: {
+    width: 100,
+    height: 100,
+    resizeMode: 'contain',
+    alignSelf: 'center',
+    marginBottom: 20,
   },
   title: {
     fontSize: 24,
     marginBottom: 20,
     textAlign: 'center',
-    color: colors.primary,
+    color: '#d32f2f',
   },
-  button: {
-    backgroundColor: colors.primary,
-    padding: 10,
-    borderRadius: 5,
-    marginVertical: 5,
+  // HomeScreen specific styles
+  homeContainer: {
+    flex: 1,
+    justifyContent: 'flex-start',
+    paddingHorizontal: 20,
+    backgroundColor: 'white',
   },
-  buttonText: {
-    color: colors.white,
+  homeLogo: {
+    width: 100,
+    height: 100,
+    resizeMode: 'contain',
+    alignSelf: 'center',
+    marginBottom: 20,
+  },
+  homeTitle: {
+    fontSize: 24,
+    marginBottom: 100,
     textAlign: 'center',
-    fontSize: 16,
+    color: '#d32f2f',
+  },
+  // LoginScreen specific styles
+  loginContainer: {
+    flex: 1,
+    justifyContent: 'flex-start',
+    paddingTop: 0,
+    paddingHorizontal: 20,
+    backgroundColor: 'white',
+  },
+  loginLogo: {
+    width: 300,
+    height: 300,
+    resizeMode: 'contain',
+    alignSelf: 'center',
+    marginBottom: 20,
+  },
+  loginTitle: {
+    fontSize: 24,
+    marginBottom: 20,
+    textAlign: 'center',
+    color: '#d32f2f',
   },
   input: {
     height: 40,
-    borderColor: colors.secondary,
+    borderColor: 'gray',
     borderWidth: 1,
     marginBottom: 20,
     paddingHorizontal: 10,
-    backgroundColor: colors.white,
+    backgroundColor: 'white',
+  },
+  // ReportsScreen specific styles
+  buttonContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    marginBottom: 20,
+  },
+  reportContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  reportText: {
+    fontSize: 18,
   },
 });
+
+export default styles;

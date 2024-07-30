@@ -1,6 +1,7 @@
 // screens/ReportsScreen.js
 import React, { useState } from 'react';
-import { View, Text, Button, StyleSheet, Image } from 'react-native';
+import { View, Text, Button, Image } from 'react-native';
+import styles from './styles';
 
 const ReportsScreen = () => {
   const [selectedReport, setSelectedReport] = useState('Daily');
@@ -33,40 +34,5 @@ const ReportsScreen = () => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    paddingHorizontal: 20,
-    backgroundColor: 'white',
-  },
-  logo: {
-    width: 100,
-    height: 100,
-    resizeMode: 'contain',
-    alignSelf: 'center',
-    marginBottom: 20,
-  },
-  title: {
-    fontSize: 24,
-    marginBottom: 20,
-    textAlign: 'center',
-    color: '#d32f2f',
-  },
-  buttonContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    marginBottom: 20,
-  },
-  reportContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  reportText: {
-    fontSize: 18,
-  },
-});
 
 export default ReportsScreen;
