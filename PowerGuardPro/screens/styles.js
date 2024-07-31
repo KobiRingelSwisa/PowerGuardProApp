@@ -166,6 +166,28 @@ const styles = StyleSheet.create({
     color: 'gray',
   },
 
+  // SettingsScreen specific styles
+  settingsSection: {
+    marginVertical: 20,
+  },
+  settingsSectionTitle: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginBottom: 10,
+    color: '#333',
+  },
+  settingsItem: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingVertical: 15,
+    borderBottomWidth: 1,
+    borderBottomColor: '#ccc',
+  },
+  settingsItemText: {
+    fontSize: 16,
+    color: '#333',
+  },
   // Modal styles
   modalContainer: {
     flex: 1,
