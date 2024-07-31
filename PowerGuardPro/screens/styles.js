@@ -24,23 +24,75 @@ const styles = StyleSheet.create({
   },
   // HomeScreen specific styles
   homeContainer: {
-    flex: 1,
-    justifyContent: 'flex-start',
-    paddingHorizontal: 20,
-    backgroundColor: 'white',
+    flexGrow: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#f5f5f5',
+    padding: 20,
+  },
+  scrollContainer: {
+    flexGrow: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
+  },
+  header: {
+    alignItems: 'center',
+    marginBottom: 20,
   },
   homeLogo: {
     width: 100,
     height: 100,
-    resizeMode: 'contain',
-    alignSelf: 'center',
-    marginBottom: 20,
+    marginBottom: 10,
   },
   homeTitle: {
+    fontSize: 28,
+    fontWeight: 'bold',
+    color: '#333',
+  },
+  metricsContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    width: '100%',
+    marginBottom: 20,
+  },
+  metricBox: {
+    alignItems: 'center',
+    padding: 10,
+    borderRadius: 10,
+    backgroundColor: '#fff',
+    elevation: 3, // for Android
+    shadowColor: '#000', // for iOS
+    shadowOffset: { width: 0, height: 2 }, // for iOS
+    shadowOpacity: 0.2, // for iOS
+    shadowRadius: 2, // for iOS
+  },
+  metricValue: {
     fontSize: 24,
-    marginBottom: 100,
-    textAlign: 'center',
+    fontWeight: 'bold',
     color: '#d32f2f',
+  },
+  metricLabel: {
+    fontSize: 16,
+    color: '#666',
+  },
+  navigationBar: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    width: '100%',
+    padding: 10,
+    backgroundColor: '#fff',
+    borderTopWidth: 1,
+    borderColor: '#ddd',
+  },
+  navButton: {
+    padding: 10,
+    backgroundColor: '#d32f2f',
+    borderRadius: 5,
+  },
+  navButtonText: {
+    color: '#fff',
+    fontSize: 16,
   },
   // LoginScreen specific styles
   loginContainer: {
