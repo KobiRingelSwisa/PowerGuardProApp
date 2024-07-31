@@ -51,6 +51,7 @@ const DeviceControlScreen = () => {
         >
           <View style={styles.modalContainer}>
             <View style={styles.modalContent}>
+              <Image source={selectedDevice.image} style={styles.deviceImage} />
               <Text style={styles.modalTitle}>{selectedDevice.name}</Text>
               <Text style={styles.modalText}>Status: {selectedDevice.status}</Text>
               <Text style={styles.modalText}>Power Consumption: {selectedDevice.powerConsumption}</Text>
