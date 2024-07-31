@@ -5,12 +5,11 @@ import styles from './styles';
 const HomeScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      <ScrollView contentContainerStyle={styles.scrollContainer}>
-        <View style={styles.header}>
+      <View style={styles.header}>
           <Image source={require('../assets/sub-logo.png')} style={styles.homeLogo} />
           <Text style={styles.homeTitle}>Home</Text>
         </View>
-
+      <ScrollView contentContainerStyle={styles.scrollContainer}>
         <View style={styles.metricsContainer}>
           <View style={styles.metricBox}>
             <Text style={styles.metricValue}>10</Text>
