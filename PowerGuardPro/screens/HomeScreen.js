@@ -1,5 +1,7 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, Image, ScrollView } from 'react-native';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import styles from './styles';
 
 const HomeScreen = ({ navigation }) => {
@@ -10,6 +12,27 @@ const HomeScreen = ({ navigation }) => {
           <Text style={styles.homeTitle}>Home</Text>
         </View>
       <ScrollView contentContainerStyle={styles.scrollContainer}>
+
+        {/* Dashboard Section */}
+        <View style={styles.dashboardContainer}>
+          <View style={styles.dashboardCard}>
+            <MaterialCommunityIcons name="devices" size={40} color="#d32f2f" />
+            <Text style={styles.dashboardCardTitle}>Total Devices</Text>
+            <Text style={styles.dashboardCardValue}>10</Text>
+          </View>
+          <View style={styles.dashboardCard}>
+            <FontAwesome5 name="wifi" size={40} color="#4caf50" />
+            <Text style={styles.dashboardCardTitle}>Active Devices</Text>
+            <Text style={styles.dashboardCardValue}>7</Text>
+          </View>
+          <View style={styles.dashboardCard}>
+            <MaterialCommunityIcons name="flash" size={40} color="#ff9800" />
+            <Text style={styles.dashboardCardTitle}>Power Consumption</Text>
+            <Text style={styles.dashboardCardValue}>70%</Text>
+          </View>
+        </View>
+
+        {/* Metrics Section */}
         <View style={styles.metricsContainer}>
           <View style={styles.metricBox}>
             <Text style={styles.metricValue}>10</Text>

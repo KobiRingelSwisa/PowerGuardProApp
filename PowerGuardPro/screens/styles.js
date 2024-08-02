@@ -50,6 +50,38 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#333',
   },
+
+   // Dashboard styles
+   dashboardContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    marginBottom: 30,
+    width: '100%',
+  },
+  dashboardCard: {
+    alignItems: 'center',
+    backgroundColor: '#fff',
+    padding: 20,
+    borderRadius: 10,
+    elevation: 4, // For Android shadow
+    shadowColor: '#000', // For iOS shadow
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    shadowRadius: 3,
+    width: '30%', // Adjust width to fit within the row
+  },
+  dashboardCardTitle: {
+    fontSize: 16,
+    color: '#666',
+    marginTop: 10,
+  },
+  dashboardCardValue: {
+    fontSize: 22,
+    fontWeight: 'bold',
+    color: '#d32f2f',
+    marginTop: 5,
+  },
+
   metricsContainer: {
     flexDirection: 'row',
     justifyContent: 'space-around',
