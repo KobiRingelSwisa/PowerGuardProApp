@@ -22,6 +22,16 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: '#d32f2f',
   },
+  reportText: {
+    fontSize: 18,
+    textAlign: 'center',
+    color: '#333',
+    marginBottom: 10,
+  },
+  chartContainer: {
+    marginVertical: 20,
+    alignItems: 'center',
+  },
   // HomeScreen specific styles
   homeContainer: {
     flexGrow: 1,
