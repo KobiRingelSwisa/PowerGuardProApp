@@ -1,6 +1,6 @@
 // screens/LoginScreen.js
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, Image } from 'react-native';
+import { View, Text, TextInput, Button, Image, TouchableOpacity } from 'react-native'; // Ensure TouchableOpacity is imported
 import styles from './styles';
 
 const LoginScreen = ({ navigation }) => {
@@ -9,6 +9,10 @@ const LoginScreen = ({ navigation }) => {
 
   const handleLogin = () => {
     navigation.navigate('Home');
+  };
+
+  const handleRegisterNavigation = () => {
+    navigation.navigate('Register');
   };
 
   return (
@@ -31,6 +35,11 @@ const LoginScreen = ({ navigation }) => {
         secureTextEntry
       />
       <Button title="Login" onPress={handleLogin} color="#d32f2f" />
+
+      {/* Register Button */}
+      <TouchableOpacity onPress={handleRegisterNavigation} style={styles.registerButton}>
+        <Text style={styles.registerButtonText}>Register</Text>
+      </TouchableOpacity>
     </View>
   );
 };

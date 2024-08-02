@@ -8,6 +8,7 @@ import ReportsScreen from './screens/ReportsScreen';
 import SettingsScreen from './screens/SettingsScreen';
 import DeviceControlScreen from './screens/DeviceControlScreen';
 import ReportDetailScreen from './screens/ReportDetailScreen';
+import RegisterScreen from './screens/RegisterScreen';
 
 const Stack = createStackNavigator();
 
@@ -16,6 +17,7 @@ function App() {
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Login">
         <Stack.Screen name="Login" component={LoginScreen} />
+        <Stack.Screen name="Register" component={RegisterScreen} />
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Reports" component={ReportsScreen} />
         <Stack.Screen name="ReportDetail" component={ReportDetailScreen} />

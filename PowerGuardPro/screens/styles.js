@@ -165,6 +165,16 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     backgroundColor: 'white',
   },
+  registerButton: {
+    marginTop: 20,
+    paddingVertical: 10,
+    alignItems: 'center',
+  },
+  registerButtonText: {
+    fontSize: 16,
+    color: '#d32f2f',
+    textDecorationLine: 'underline',
+  },
   // ReportsScreen specific styles
   buttonContainer: {
     flexDirection: 'row',
