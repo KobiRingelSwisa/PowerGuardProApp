@@ -265,7 +265,31 @@ const styles = StyleSheet.create({
   modalButton: {
     marginTop: 20,
   },
-
+  // Loader specific styles
+  loaderContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'transparent',
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
+    zIndex: 1,
+  },
+  lottie: {
+    width: 150,
+    height: 150,
+  },
+  loadingText: {
+    fontSize: 18,
+    color: '#333',
+    marginTop: 10,
+  },
+  errorText: {
+    fontSize: 18,
+    color: 'red',
+    marginTop: 10,
+  },
 });
 
 export default styles;

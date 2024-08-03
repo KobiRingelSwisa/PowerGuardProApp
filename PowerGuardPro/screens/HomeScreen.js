@@ -1,18 +1,36 @@
-import React from 'react';
+// HomeScreen.js
+
+import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, Image, ScrollView } from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import Loader from '../components/Loader';  // Import the Loader component
 import styles from './styles';
 
 const HomeScreen = ({ navigation }) => {
+  const [loading, setLoading] = useState(false);  // State to manage loading
+
+  // Function to handle navigation with loading
+  const handleNavigation = (screen) => {
+    setLoading(true);  // Show the loader
+
+    // Simulate a delay for loading animation
+    setTimeout(() => {
+      setLoading(false);  // Hide the loader
+      navigation.navigate(screen);  // Navigate to the desired screen
+    }, 1000);  // Adjust the timeout as needed (e.g., 1000ms for 1 second)
+  };
+
   return (
     <View style={styles.container}>
-      <View style={styles.header}>
-          <Image source={require('../assets/sub-logo.png')} style={styles.homeLogo} />
-          <Text style={styles.homeTitle}>Home</Text>
-        </View>
-      <ScrollView contentContainerStyle={styles.scrollContainer}>
+      {loading && <Loader />}  
 
+      <View style={styles.header}>
+        <Image source={require('../assets/sub-logo.png')} style={styles.homeLogo} />
+        <Text style={styles.homeTitle}>Home</Text>
+      </View>
+      
+      <ScrollView contentContainerStyle={styles.scrollContainer}>
         {/* Dashboard Section */}
         <View style={styles.dashboardContainer}>
           <View style={styles.dashboardCard}>
@@ -50,13 +68,22 @@ const HomeScreen = ({ navigation }) => {
       </ScrollView>
 
       <View style={styles.navigationBar}>
-        <TouchableOpacity style={styles.navButton} onPress={() => navigation.navigate('Reports')}>
+        <TouchableOpacity
+          style={styles.navButton}
+          onPress={() => handleNavigation('Reports')}  // Use the function to handle navigation
+        >
           <Text style={styles.navButtonText}>Reports</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.navButton} onPress={() => navigation.navigate('Settings')}>
+        <TouchableOpacity
+          style={styles.navButton}
+          onPress={() => handleNavigation('Settings')}  // Use the function to handle navigation
+        >
           <Text style={styles.navButtonText}>Settings</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.navButton} onPress={() => navigation.navigate('DeviceControl')}>
+        <TouchableOpacity
+          style={styles.navButton}
+          onPress={() => handleNavigation('DeviceControl')}  // Use the function to handle navigation
+        >
           <Text style={styles.navButtonText}>Device Control</Text>
         </TouchableOpacity>
       </View>

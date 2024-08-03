@@ -1,14 +1,23 @@
 // screens/LoginScreen.js
+
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, Image, TouchableOpacity } from 'react-native'; // Ensure TouchableOpacity is imported
+import { View, Text, TextInput, Button, Image, TouchableOpacity } from 'react-native';
+import Loader from '../components/Loader';  
 import styles from './styles';
 
 const LoginScreen = ({ navigation }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false);  
 
   const handleLogin = () => {
-    navigation.navigate('Home');
+    setLoading(true); 
+
+   
+    setTimeout(() => {
+      setLoading(false);  
+      navigation.navigate('Home');
+    }, 5000);
   };
 
   const handleRegisterNavigation = () => {
@@ -17,6 +26,7 @@ const LoginScreen = ({ navigation }) => {
 
   return (
     <View style={styles.loginContainer}>
+      {loading && <Loader />}  
       <Image source={require('../assets/logo.png')} style={styles.loginLogo} />
       <Text style={styles.loginTitle}>Login</Text>
       <TextInput
@@ -35,8 +45,6 @@ const LoginScreen = ({ navigation }) => {
         secureTextEntry
       />
       <Button title="Login" onPress={handleLogin} color="#d32f2f" />
-
-      {/* Register Button */}
       <TouchableOpacity onPress={handleRegisterNavigation} style={styles.registerButton}>
         <Text style={styles.registerButtonText}>Register</Text>
       </TouchableOpacity>
