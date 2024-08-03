@@ -17,8 +17,8 @@ const HomeScreen = ({ navigation }) => {
     // Simulate a delay for loading animation
     setTimeout(() => {
       setLoading(false);  // Hide the loader
-      navigation.navigate(screen);  // Navigate to the desired screen
-    }, 1000);  // Adjust the timeout as needed (e.g., 1000ms for 1 second)
+      navigation.navigate(screen);  
+    }, 5000);  
   };
 
   return (
