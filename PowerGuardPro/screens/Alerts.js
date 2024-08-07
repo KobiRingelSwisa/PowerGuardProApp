@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, Button, StyleSheet, Image, ScrollView } from 'react-native';
+import styles from './styles';
 
 const AlertSystemScreen = () => {
   const [selectedView, setSelectedView] = useState('Notifications');
@@ -71,73 +72,5 @@ const AlertSystemScreen = () => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    paddingHorizontal: 20,
-    backgroundColor: 'white',
-  },
-  logo: {
-    width: 100,
-    height: 100,
-    resizeMode: 'contain',
-    alignSelf: 'center',
-    marginBottom: 20,
-  },
-  title: {
-    fontSize: 24,
-    marginBottom: 20,
-    textAlign: 'center',
-    color: '#d32f2f',
-  },
-  buttonContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    marginBottom: 20,
-  },
-  contentContainer: {
-    flex: 1,
-  },
-  listContainer: {
-    flex: 1,
-  },
-  notification: {
-    padding: 15,
-    borderBottomWidth: 1,
-    borderBottomColor: '#ddd',
-  },
-  notificationTitle: {
-    fontSize: 18,
-    marginBottom: 10,
-  },
-  settingsContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  settingsText: {
-    fontSize: 18,
-    marginBottom: 10,
-  },
-  detailsContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  detailsTitle: {
-    fontSize: 24,
-    marginBottom: 20,
-  },
-  detailsText: {
-    fontSize: 18,
-    marginBottom: 10,
-  },
-  defaultText: {
-    fontSize: 18,
-    textAlign: 'center',
-  },
-});
 
 export default AlertSystemScreen;

@@ -22,6 +22,47 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: '#d32f2f',
   },
+  contentContainer: {
+    flex: 1,
+  },
+  listContainer: {
+    flex: 1,
+  },
+  notification: {
+    padding: 15,
+    borderBottomWidth: 1,
+    borderBottomColor: '#ddd',
+  },
+  notificationTitle: {
+    fontSize: 18,
+    marginBottom: 10,
+  },
+  settingsContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  settingsText: {
+    fontSize: 18,
+    marginBottom: 10,
+  },
+  detailsContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  detailsTitle: {
+    fontSize: 24,
+    marginBottom: 20,
+  },
+  detailsText: {
+    fontSize: 18,
+    marginBottom: 10,
+  },
+  defaultText: {
+    fontSize: 18,
+    textAlign: 'center',
+  },
   reportText: {
     fontSize: 18,
     textAlign: 'center',
