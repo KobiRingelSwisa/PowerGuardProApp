@@ -9,6 +9,7 @@ import SettingsScreen from './screens/SettingsScreen';
 import DeviceControlScreen from './screens/DeviceControlScreen';
 import ReportDetailScreen from './screens/ReportDetailScreen';
 import RegisterScreen from './screens/RegisterScreen';
+import AlertSystemScreen from './screens/Alerts';
 
 const Stack = createStackNavigator();
 
@@ -23,6 +24,8 @@ function App() {
         <Stack.Screen name="ReportDetail" component={ReportDetailScreen} />
         <Stack.Screen name="Settings" component={SettingsScreen} />
         <Stack.Screen name="DeviceControl" component={DeviceControlScreen} />
+        <Stack.Screen name="Alerts" component={AlertSystemScreen} />
+        
       </Stack.Navigator>
     </NavigationContainer>
   );

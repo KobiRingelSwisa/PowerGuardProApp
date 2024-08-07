@@ -86,6 +86,12 @@ const HomeScreen = ({ navigation }) => {
         >
           <Text style={styles.navButtonText}>Device Control</Text>
         </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.navButton}
+          onPress={() => handleNavigation('Alerts')}  // Use the function to handle navigation to Alerts
+        >
+          <Text style={styles.navButtonText}>Alerts</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
