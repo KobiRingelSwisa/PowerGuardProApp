@@ -30,50 +30,34 @@ const HomeScreen = ({ navigation }) => {
       <View style={styles.header}>
         <Image source={require('../assets/sub-logo.png')} style={styles.homeLogo} />
         <Text style={styles.homeTitle}>Home</Text>
+
+        <ProgressCircle
+          percent={powerConsumption}  // Replace 70 with a dynamic value if available
+          radius={50}
+          borderWidth={8}
+          color="#ff9800"
+          shadowColor="#f4f4f4"
+          bgColor="#fff"
+        >
+          <Text style={styles.progressCircleText}>{`${powerConsumption}%`}</Text>
+        </ProgressCircle>
+        <Text style={styles.dashboardCardTitle}>Power Consumption Rate</Text>
       </View>
       
       <ScrollView contentContainerStyle={styles.scrollContainer}>
         {/* Dashboard Section */}
         <View style={styles.dashboardContainer}>
           <View style={styles.dashboardCard}>
-            <MaterialCommunityIcons name="devices" size={40} color="#d32f2f" />
+          <Image source={require('../assets/icons/total_devices_logo.png')} style={styles.dashboardIcon} />
             <Text style={styles.dashboardCardTitle}>Total Devices</Text>
             <Text style={styles.dashboardCardValue}>10</Text>
           </View>
           <View style={styles.dashboardCard}>
-            <FontAwesome5 name="wifi" size={40} color="#4caf50" />
+          <Image source={require('../assets/icons/active_devices_logo.png')} style={styles.dashboardIcon} />
             <Text style={styles.dashboardCardTitle}>Active Devices</Text>
             <Text style={styles.dashboardCardValue}>7</Text>
           </View>
-          <View style={styles.dashboardCard}>
-  <ProgressCircle
-    percent={powerConsumption}  // Replace 70 with a dynamic value if available
-    radius={50}
-    borderWidth={8}
-    color="#ff9800"
-    shadowColor="#f4f4f4"
-    bgColor="#fff"
-  >
-    <Text style={styles.progressCircleText}>{`${powerConsumption}%`}</Text>
-  </ProgressCircle>
-  <Text style={styles.dashboardCardTitle}>Power Consumption</Text>
-</View>
-        </View>
-
-        {/* Metrics Section */}
-        <View style={styles.metricsContainer}>
-          <View style={styles.metricBox}>
-            <Text style={styles.metricValue}>10</Text>
-            <Text style={styles.metricLabel}>Total Devices</Text>
-          </View>
-          <View style={styles.metricBox}>
-            <Text style={styles.metricValue}>7</Text>
-            <Text style={styles.metricLabel}>Active Devices</Text>
-          </View>
-          <View style={styles.metricBox}>
-            <Text style={styles.metricValue}>70%</Text>
-            <Text style={styles.metricLabel}>Power Consumption</Text>
-          </View>
+          
         </View>
       </ScrollView>
 

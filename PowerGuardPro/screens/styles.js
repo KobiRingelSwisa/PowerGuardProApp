@@ -99,6 +99,8 @@ const styles = StyleSheet.create({
   homeTitle: {
     fontSize: 28,
     fontWeight: 'bold',
+    marginBottom: 20,
+    marginTop: 20,
     color: '#333',
   },
 
@@ -108,6 +110,12 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     marginBottom: 30,
     width: '100%',
+  },
+  dashboardIcon: {
+    width: 50,
+    height: 50,
+    resizeMode: 'contain', // Ensures the image fits within the specified dimensions
+    marginBottom: 10, // Adds some spacing between the icon and text
   },
   progressCircleText: {
     fontSize: 18,
@@ -134,33 +142,6 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#d32f2f',
     marginTop: 5,
-  },
-
-  metricsContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    width: '100%',
-    marginBottom: 20,
-  },
-  metricBox: {
-    alignItems: 'center',
-    padding: 10,
-    borderRadius: 10,
-    backgroundColor: '#fff',
-    elevation: 3, // for Android
-    shadowColor: '#000', // for iOS
-    shadowOffset: { width: 0, height: 2 }, // for iOS
-    shadowOpacity: 0.2, // for iOS
-    shadowRadius: 2, // for iOS
-  },
-  metricValue: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    color: '#d32f2f',
-  },
-  metricLabel: {
-    fontSize: 16,
-    color: '#666',
   },
   navigationBar: {
     flexDirection: 'row',
