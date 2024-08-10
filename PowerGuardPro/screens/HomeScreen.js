@@ -6,9 +6,11 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import Loader from '../components/Loader';  // Import the Loader component
 import styles from './styles';
+import ProgressCircle from 'react-native-progress-circle';
 
 const HomeScreen = ({ navigation }) => {
   const [loading, setLoading] = useState(false);  // State to manage loading
+  const [powerConsumption, setPowerConsumption] = useState(70);
 
   // Function to handle navigation with loading
   const handleNavigation = (screen) => {
@@ -44,10 +46,18 @@ const HomeScreen = ({ navigation }) => {
             <Text style={styles.dashboardCardValue}>7</Text>
           </View>
           <View style={styles.dashboardCard}>
-            <MaterialCommunityIcons name="flash" size={40} color="#ff9800" />
-            <Text style={styles.dashboardCardTitle}>Power Consumption</Text>
-            <Text style={styles.dashboardCardValue}>70%</Text>
-          </View>
+  <ProgressCircle
+    percent={powerConsumption}  // Replace 70 with a dynamic value if available
+    radius={50}
+    borderWidth={8}
+    color="#ff9800"
+    shadowColor="#f4f4f4"
+    bgColor="#fff"
+  >
+    <Text style={styles.progressCircleText}>{`${powerConsumption}%`}</Text>
+  </ProgressCircle>
+  <Text style={styles.dashboardCardTitle}>Power Consumption</Text>
+</View>
         </View>
 
         {/* Metrics Section */}

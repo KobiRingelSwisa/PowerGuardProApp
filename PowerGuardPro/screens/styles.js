@@ -109,17 +109,20 @@ const styles = StyleSheet.create({
     marginBottom: 30,
     width: '100%',
   },
+  progressCircleText: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#ff9800',
+  },
   dashboardCard: {
+    flex: 1,
     alignItems: 'center',
-    backgroundColor: '#fff',
-    padding: 20,
-    borderRadius: 10,
-    elevation: 4, // For Android shadow
-    shadowColor: '#000', // For iOS shadow
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.2,
-    shadowRadius: 3,
-    width: '30%', // Adjust width to fit within the row
+    justifyContent: 'center',
+    margin: 10,
+    padding: 10,
+    borderRadius: 8,
+    backgroundColor: '#f9f9f9',
+    elevation: 3,
   },
   dashboardCardTitle: {
     fontSize: 16,

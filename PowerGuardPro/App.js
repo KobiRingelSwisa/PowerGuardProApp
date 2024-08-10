@@ -10,6 +10,8 @@ import DeviceControlScreen from './screens/DeviceControlScreen';
 import ReportDetailScreen from './screens/ReportDetailScreen';
 import RegisterScreen from './screens/RegisterScreen';
 import AlertSystemScreen from './screens/Alerts';
+import { AppRegistry } from 'react-native';
+import { name as appName } from './app.json';
 
 const Stack = createStackNavigator();
 
@@ -32,3 +34,6 @@ function App() {
 }
 
 export default App;
+
+
+AppRegistry.registerComponent(appName, () => MainApp);
