@@ -1,7 +1,7 @@
 // screens/LoginScreen.js
 
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, Image, TouchableOpacity } from 'react-native';
+import { View, Text, TextInput, Button, Image, TouchableOpacity, Alert } from 'react-native';
 import Loader from '../components/Loader';  
 import styles from './styles';
 
@@ -11,13 +11,23 @@ const LoginScreen = ({ navigation }) => {
   const [loading, setLoading] = useState(false);  
 
   const handleLogin = () => {
-    setLoading(true); 
+        if (!validateEmail(email)) {
+      Alert.alert("Invalid Email", "Please enter a valid email address.");
+      return;
+    }
 
+    setLoading(true); 
    
     setTimeout(() => {
       setLoading(false);  
       navigation.navigate('Home');
     }, 5000);
+  };
+
+  const validateEmail = (email) => {
+    // Simple regex for basic email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
   };
 
   const handleRegisterNavigation = () => {
