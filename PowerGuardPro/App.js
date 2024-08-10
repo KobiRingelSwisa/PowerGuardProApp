@@ -1,39 +1,104 @@
 import 'react-native-gesture-handler';
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
-import LoginScreen from './screens/LoginScreen';
+import { Image, StyleSheet } from 'react-native';
 import HomeScreen from './screens/HomeScreen';
+import LoginScreen from './screens/LoginScreen';
 import ReportsScreen from './screens/ReportsScreen';
 import SettingsScreen from './screens/SettingsScreen';
 import DeviceControlScreen from './screens/DeviceControlScreen';
-import ReportDetailScreen from './screens/ReportDetailScreen';
-import RegisterScreen from './screens/RegisterScreen';
 import AlertSystemScreen from './screens/Alerts';
-import { AppRegistry } from 'react-native';
-import { name as appName } from './app.json';
 
+// Define the Tab and Stack navigators
+const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 
-function App() {
+// Import the logos
+const homeIcon = require('./assets/icons/homeIcon.png');
+const reportsIcon = require('./assets/icons/reportsIcon.png');
+const settingsIcon = require('./assets/icons/settingsIcon.png');
+const deviceControlIcon = require('./assets/icons/deviceControlIcon.png');
+const alertsIcon = require('./assets/icons/alertsIcon.png');
+
+// Main App Tab Navigation
+function MainApp() {
+  return (
+    <Tab.Navigator
+      initialRouteName="Home" // Initial screen after login
+      screenOptions={({ route }) => ({
+        tabBarIcon: ({ focused }) => {
+          let iconSource;
+
+          if (route.name === 'Home') {
+            iconSource = homeIcon;
+          } else if (route.name === 'Reports') {
+            iconSource = reportsIcon;
+          } else if (route.name === 'Settings') {
+            iconSource = settingsIcon;
+          } else if (route.name === 'DeviceControl') {
+            iconSource = deviceControlIcon;
+          } else if (route.name === 'Alerts') {
+            iconSource = alertsIcon;
+          }
+
+          return (
+            <Image
+              source={iconSource}
+              style={[
+                styles.icon,
+                { tintColor: focused ? '#ffffff' : '#ffcccc' }
+              ]}
+            />
+          );
+        },
+        tabBarActiveTintColor: '#ffffff',
+        tabBarInactiveTintColor: '#ffcccc',
+        tabBarStyle: {
+          backgroundColor: '#d32f2f',
+          borderTopWidth: 0,
+          height: 60,
+        },
+        tabBarLabelStyle: {
+          fontSize: 12,
+          paddingBottom: 5,
+        },
+      })}
+    >
+      <Tab.Screen name="Home" component={HomeScreen} />
+      <Tab.Screen name="Reports" component={ReportsScreen} />
+      <Tab.Screen name="DeviceControl" component={DeviceControlScreen} />
+      <Tab.Screen name="Alerts" component={AlertSystemScreen} />
+      <Tab.Screen name="Settings" component={SettingsScreen} />
+    </Tab.Navigator>
+  );
+}
+
+// Main App with Login Flow
+export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Login">
-        <Stack.Screen name="Login" component={LoginScreen} />
-        <Stack.Screen name="Register" component={RegisterScreen} />
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Reports" component={ReportsScreen} />
-        <Stack.Screen name="ReportDetail" component={ReportDetailScreen} />
-        <Stack.Screen name="Settings" component={SettingsScreen} />
-        <Stack.Screen name="DeviceControl" component={DeviceControlScreen} />
-        <Stack.Screen name="Alerts" component={AlertSystemScreen} />
-        
+        <Stack.Screen
+          name="Login"
+          component={LoginScreen}
+          options={{ headerShown: false }} // Hide the header on the login screen
+        />
+        <Stack.Screen
+          name="MainApp"
+          component={MainApp}
+          options={{ headerShown: false }} // Hide the header on the tab navigation
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
 
-export default App;
-
-
-AppRegistry.registerComponent(appName, () => MainApp);
+const styles = StyleSheet.create({
+  icon: {
+    width: 24,  // Adjust the width to your needs
+    height: 24, // Adjust the height to your needs
+    resizeMode: 'contain',
+  },
+});
