@@ -7,20 +7,32 @@ const device1Image = require('../assets/device1.png');
 const device2Image = require('../assets/device2.png');
 const device3Image = require('../assets/device3.png');
 
-const devices = [
-  { id: '1', name: 'Device 1', image: device1Image, status: 'Online', powerConsumption: '50W' },
-  { id: '2', name: 'Device 2', image: device2Image, status: 'Offline', powerConsumption: '75W' },
-  { id: '3', name: 'Device 3', image: device3Image, status: 'Online', powerConsumption: '60W' },
+const initialDevices = [
+  { id: '1', name: 'Device 1', image: device1Image, status: 'Online', powerConsumption: '50W', type: 'Dish Washer' },
+  { id: '2', name: 'Device 2', image: device2Image, status: 'Offline', powerConsumption: '75W', type: 'Air Conditioner' },
+  { id: '3', name: 'Device 3', image: device3Image, status: 'Online', powerConsumption: '60W', type: 'Fridge' },
   // Add more devices as needed
 ];
 
 const DeviceControlScreen = () => {
+  const [devices, setDevices] = useState(initialDevices); // Move devices array to state
   const [modalVisible, setModalVisible] = useState(false);
   const [selectedDevice, setSelectedDevice] = useState(null);
 
   const handleDevicePress = (device) => {
     setSelectedDevice(device);
     setModalVisible(true);
+  };
+
+  const handleToggleStatus = () => {
+    const updatedDevices = devices.map(device => 
+      device.id === selectedDevice.id 
+      ? { ...device, status: device.status === 'Online' ? 'Offline' : 'Online' } 
+      : device
+    );
+    setDevices(updatedDevices);
+    setSelectedDevice({ ...selectedDevice, status: selectedDevice.status === 'Online' ? 'Offline' : 'Online' });
+    setModalVisible(false);
   };
 
   const renderItem = ({ item }) => (
@@ -53,14 +65,12 @@ const DeviceControlScreen = () => {
             <View style={styles.modalContent}>
               <Image source={selectedDevice.image} style={styles.deviceImage} />
               <Text style={styles.modalTitle}>{selectedDevice.name}</Text>
+              <Text style={styles.modalText}>Type: {selectedDevice.type}</Text>
               <Text style={styles.modalText}>Status: {selectedDevice.status}</Text>
               <Text style={styles.modalText}>Power Consumption: {selectedDevice.powerConsumption}</Text>
               <Button
                 title={selectedDevice.status === 'Online' ? 'Turn Off' : 'Turn On'}
-                onPress={() => {
-                  // Add logic to turn the device on/off
-                  setModalVisible(false);
-                }}
+                onPress={handleToggleStatus}
                 color="#d32f2f"
                 style={styles.modalButton}
               />
