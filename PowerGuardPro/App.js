@@ -10,8 +10,8 @@ import ReportsScreen from './screens/ReportsScreen';
 import SettingsScreen from './screens/SettingsScreen';
 import DeviceControlScreen from './screens/DeviceControlScreen';
 import AlertSystemScreen from './screens/Alerts';
+import ReportDetailScreen from './screens/ReportDetailScreen';
 
-// Define the Tab and Stack navigators
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 
@@ -22,11 +22,11 @@ const settingsIcon = require('./assets/icons/settingsIcon.png');
 const deviceControlIcon = require('./assets/icons/deviceControlIcon.png');
 const alertsIcon = require('./assets/icons/alertsIcon.png');
 
-// Main App Tab Navigation
+// Tab Navigation (MainApp)
 function MainApp() {
   return (
     <Tab.Navigator
-      initialRouteName="Home" // Initial screen after login
+      initialRouteName="Home"
       screenOptions={({ route }) => ({
         tabBarIcon: ({ focused }) => {
           let iconSource;
@@ -75,7 +75,7 @@ function MainApp() {
   );
 }
 
-// Main App with Login Flow
+// Stack Navigation (Including ReportDetailScreen)
 export default function App() {
   return (
     <NavigationContainer>
@@ -89,6 +89,13 @@ export default function App() {
           name="MainApp"
           component={MainApp}
           options={{ headerShown: false }} // Hide the header on the tab navigation
+        />
+        <Stack.Screen
+          name="ReportDetail"
+          component={ReportDetailScreen}
+          options={({ route }) => ({
+            title: route.params?.reportType || 'Report Details', // Use the report type as the title
+          })}
         />
       </Stack.Navigator>
     </NavigationContainer>
