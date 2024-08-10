@@ -7,6 +7,7 @@ import { Image, StyleSheet } from 'react-native';
 import HomeScreen from './screens/HomeScreen';
 import LoginScreen from './screens/LoginScreen';
 import ReportsScreen from './screens/ReportsScreen';
+import RegisterScreen from './screens/RegisterScreen'
 import SettingsScreen from './screens/SettingsScreen';
 import DeviceControlScreen from './screens/DeviceControlScreen';
 import AlertSystemScreen from './screens/Alerts';
@@ -84,6 +85,11 @@ export default function App() {
           name="Login"
           component={LoginScreen}
           options={{ headerShown: false }} // Hide the header on the login screen
+        />
+        <Stack.Screen
+          name="Register"
+          component={RegisterScreen}
+          options={ {headerShown: false}}
         />
         <Stack.Screen
           name="MainApp"
