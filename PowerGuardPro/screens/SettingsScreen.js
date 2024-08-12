@@ -111,8 +111,8 @@ const SettingsScreen = () => {
               autoCapitalize="none"
             />
             <View style={styles.buttonContainer}>
-              <Button title="Cancel" onPress={() => setEmailModalVisible(false)} color="#d32f2f" />
-              <Button title="Save" onPress={handleEmailChange} color="#4caf50" />
+              <Button title="Cancel" onPress={() => setEmailModalVisible(false)} color="#000000" />
+              <Button title="Save" onPress={handleEmailChange} color="#000000" />
             </View>
           </View>
         </View>
