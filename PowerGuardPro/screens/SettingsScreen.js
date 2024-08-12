@@ -100,7 +100,7 @@ const SettingsScreen = () => {
         onRequestClose={() => setEmailModalVisible(false)}
       >
         <View style={styles.modalOverlay}>
-          <View style={styles.modalContainer}>
+          <View style={styles.settingsModalContainer}>
             <Text style={styles.modalTitle}>Change Email</Text>
             <TextInput
               style={styles.input}
@@ -126,7 +126,7 @@ const SettingsScreen = () => {
         onRequestClose={() => setPasswordModalVisible(false)}
       >
         <View style={styles.modalOverlay}>
-          <View style={styles.modalContainer}>
+          <View style={styles.settingsModalContainer}>
             <Text style={styles.modalTitle}>Change Password</Text>
             <TextInput
               style={styles.input}
@@ -158,7 +158,7 @@ const SettingsScreen = () => {
         onRequestClose={() => setSubscriptionModalVisible(false)}
       >
         <View style={styles.modalOverlay}>
-          <View style={styles.modalContainer}>
+          <View style={styles.settingsModalContainer}>
             <Text style={styles.modalTitle}>Manage Subscriptions</Text>
             <Text style={styles.modalText}>This feature will be available in the next version of this app.</Text>
             <View style={styles.buttonContainer}>
@@ -176,7 +176,7 @@ const SettingsScreen = () => {
         onRequestClose={() => setInfoModalVisible(false)}
       >
         <View style={styles.modalOverlay}>
-          <View style={styles.modalContainer}>
+          <View style={styles.settingsModalContainer}>
             <Text style={styles.modalTitle}>Information</Text>
             <Text style={styles.modalText}>{infoModalMessage}</Text>
             <View style={styles.buttonContainer}>
